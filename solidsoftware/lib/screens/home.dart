@@ -45,15 +45,15 @@ class _HomePageState extends State<HomePage> {
                   Clipboard.setData(ClipboardData(
                       text:
                           '${backgroundColor.red} ${backgroundColor.green} ${backgroundColor.blue}'));
-                  const snackBarCopied = SnackBar(
-                    content: Text('Сopied to clipboard'),
-                    duration: Duration(seconds: 1),
+                  var snackBarCopied = SnackBar(
+                    content: Text(copiedToClipboard),
+                    duration: const Duration(seconds: 1),
 
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBarCopied);
                 },
                 child: Text(
-                    'RGB: ${backgroundColor.red} ${backgroundColor.green} ${backgroundColor.blue}')),
+                    '$rgb: ${backgroundColor.red} ${backgroundColor.green} ${backgroundColor.blue}')),
           ),
         ),
         backgroundColor: backgroundColor,
